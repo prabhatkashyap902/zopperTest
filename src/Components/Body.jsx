@@ -73,7 +73,7 @@ export default function Body(props) {
         console.log(temp);
         if (value.trim() === "") alert("Your Name can't be empty!");
         else {
-            Axios.post("https://reqres.in/api/users", temp).then((success) => { props.redirect() }).catch(err => { console.log(err); })
+            Axios.post("https://reqres.in/api/users", temp).then((success) => { props.redirect(success.data) }).catch(err => { console.log(err); })
         }
 
     }
